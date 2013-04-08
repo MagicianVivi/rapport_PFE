@@ -1,0 +1,58 @@
+\documentclass[a4paper,12pt]{report}
+\usepackage[utf8]{inputenc}
+\usepackage{graphicx}
+\usepackage{fancyhdr}
+\usepackage[pdftex=true, hyperindex=true, colorlinks=true, linkcolor=blue,
+            citecolor=cyan]{hyperref}
+\usepackage[francais]{babel}
+
+\begin{document}
+
+\begin{titlepage}
+
+\addtolength{\oddsidemargin}{-0.15in}
+\addtolength{\textwidth}{0.5in}
+\addtolength{\topmargin}{-.375in}
+\addtolength{\textheight}{0.75in}
+
+\begin{center}
+
+\begin{tabular*}{6in}{l@{\extracolsep{\fill}}r}{Vivien Alger}&{À
+    l'attention de Florent Devin,}\\
+    {Éric Hostalery}&{Yannick Le Nir,}\\
+    {Cédric Salvador}&{et Rémi Vernay}\\
+    {Mathieu Vacher}
+\end{tabular*}
+\vspace*{\fill}
+
+\textsc{\LARGE Rapport de PFE: Portage d'Akka sur Android}\\
+\vspace*{\fill}
+
+\today
+\end{center}
+
+\end{titlepage}
+
+\tableofcontents
+\newpage
+  
+\section*{Introduction}
+
+Dans le cadre de notre projet de fin d’études pour l’option ICC nous avons choisi 
+de nous attarder sur le comportement d’un cluster de smartphones, plus précisément 
+sous Android, vu que c’est actuellement la plateforme mobile “ouverte” la plus 
+accessible et la plus répandue.\\
+En effet, nous avons constaté que les terminaux mobiles deviennent de plus en plus 
+puissants depuis quelques années, au point que l’on peut désormais faire tourner des 
+systèmes d’exploitation comme GNU/Linux dessus. Partant de ce constat, nous avons alors 
+décidé d’explorer les spécificités du calcul réparti sur de telles machines, et de nous 
+concentrer sur les aspects inhérents à ces plateformes que sont la consommation de la 
+batterie et les déconnexions/pertes de réseau intempestives.\\
+Ainsi nous avons chercher à mettre en place une gestion dynamique de l’architecture 
+de calcul pour gé́rer la consommation de batterie et la tolé́rance aux pannes lié́es au 
+ré́seau mobile.\\
+Pour illustrer cette problématique, nous avons tenté de porter le middleware Akka
+sur la plateforme Android en le couplant avec le service google cloud messaging
+pour faire communiquer les différent téléphones.
+
+\end{document}
