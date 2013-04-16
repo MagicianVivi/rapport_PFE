@@ -1,4 +1,4 @@
-\documentclass[a4paper,12pt]{report}
+\documentclass[a4paper,12pt]{article}
 \usepackage[utf8]{inputenc}
 \usepackage{graphicx}
 \usepackage{fancyhdr}
@@ -36,6 +36,15 @@ d'un cluster de smartphones Android}\\
 
 \tableofcontents
 \newpage
+
+% Defining page style for the rest of the document
+\pagestyle{fancy}
+\fancyhf{}
+\fancyhead[L]{Introduction}
+\fancyfoot[C]{Vivien Alger, Éric Hostalery, Cédric Salvador et Mathieu Vacher}
+\fancyhead[R]{\thepage}
+\renewcommand{\footrulewidth}{1pt}
+\renewcommand{\headrulewidth}{1pt}
   
 \section*{Introduction}
 Dans le cadre de notre projet de fin d’études nous avons choisi de nous 
@@ -55,4 +64,19 @@ aux pannes lié́es au ré́seau mobile.\\
 Pour illustrer cette problématique, nous avons tenté de porter le middleware 
 Akka sur la plateforme Android en le couplant avec le service google cloud 
 messaging pour faire communiquer les différent téléphones.
+\newpage
+
+\fancyhead[L]{\leftmark}
+
+\section{Problématique}
+\section{Architectures}
+\section{Application d'une architecture: tentative de portage d'Akka}
+\subsection{Scala et Akka sur Android}
+\subsection{Utilisation de Google Cloud Messaging}
+\subsection{Intégration avec des SMS}
+\newpage
+
+\fancyhead[L]{Conclusion}
+
+\section*{Conclusion}
 \end{document}
