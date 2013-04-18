@@ -142,12 +142,15 @@ de Google Cloud Messaging qui va permettre de connaître l’état, le status de
 batterie, et l’adresse ip des différents noeuds à tout moment, et de la partie
 communication par SMS.
 
+\newpage
 
 \begin{figure}[h]
 \centering
 \includegraphics[scale=0.2]{images/gcm.png}
 \caption{Schéma de notre architecture}
 \end{figure}
+
+\newpage
 
 \subsection{Scala et Akka sur Android}
 
@@ -335,11 +338,38 @@ l’a pas maintenu).  Une autre possibilité aurait été de partir de zéro, et
 refaire de zéro la gestion du réseau en Scala. Le principal inconvénient de
 cette solution est de perdre le travail fait sur Akka.
 
-
-
 \newpage
 
 \fancyhead[L]{Conclusion}
 
 \section*{Conclusion}
+Les possibilités de “cloud mobile” sont nombreuses et variées, et beaucoup de
+travail reste à faire dans ce domaine. La meilleure solution serait
+probablement de recréer un framework nativement destiné aux plateformes
+mobiles, en reprenant les idées des acteurs majeurs du marché fixe, comme
+Hadoop ou Akka. Repartir de zéro enlèverait ainsi les limitations et problèmes
+de compatibilité auxquels nous avons du faire face lors du portage d’Akka sur
+Android, comme les nouvelles dépendances apportées par les nouvelles versions,
+qui rendent les projets de ce type peu maintenables.\\ De plus, nous pensons
+que la partie SMS est un véritable atout par rapport aux clusters
+traditionnels. En effet, cela nous permet de ne plus seulement nous reposer sur
+un unique mode de communication, mais sur deux, ce qui permet de pallier des
+pannes sur l’un des deux modes.\\ Néanmoins, il nous apparaît difficile de
+faire un cluster composé uniquement de smartphones. En effet, durant les
+calculs le client/maître à besoin de connaître les informations des différents
+noeuds tels que leurs adresses IP ou leurs numéro de téléphone pour les SMS. Il
+faut donc dans tous les cas une machine qui s’occupe de synchroniser les
+changements de ces informations, rôle qui requiert d’être toujours disponible,
+ce qui convient mal à un smartphone.\\ 
+
+Pour revenir à notre problématique de base, si nous n’avons pas pu tester la
+partie consommation de batterie par manque de temps et à cause de nos
+problèmes, nous avons tout de même pu explorer la partie réseau avec nos
+différentes architectures. On peut imaginer des utilisations pratiques si ce
+projet était mené à bout.\\ Par exemple, il serait possible de créer un
+équivalent ou un portage de BOINC(Berkeley Open Infrastructure for Network
+Computing) pour smartphone, qui permettrait de prêter le temps de calcul
+disponible de son téléphone à des projets scientifiques: pliage de molécules,
+projet SETI...
+
 \end{document}
