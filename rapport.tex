@@ -258,7 +258,6 @@ plusieurs services :\\
 \item le lancement d’un ping à tous les téléphones portables enregistrés en
   base de données
 \end{itemize}
-
 Ce ping va nous servir à récupérer les adresses ip des téléphones portables,
 ainsi que leur statut (disponible, occupé, ou batterie faible). Ces
 informations doivent ensuite être transmises à Akka afin de créer le router et
@@ -289,8 +288,7 @@ En ce qui concerne la communication des acteurs pour Akka, il aurait fallu
 implémenter une sérialisation/desérialisation des messages transmis par Akka,
 procédé qui aurait également pu être utilisé pour transmettre ces messages par
 GCM.\\
-Pour le deuxième aspect, plusieurs solutions auraient été envisag
-eables :\\
+Pour le deuxième aspect, plusieurs solutions auraient été envisageables :\\
 \begin{itemize}
 \item la première est d’utiliser un service externe, de type Twilio, qui a
   comme principal inconvénient d’engendrer des frais supplémentaires. Ce
@@ -301,7 +299,6 @@ eables :\\
   “pont” entre le cluster et le serveur GCM : il receptionnerait tous les SMS,
   et s’occuperait de tout transmettre au serveur en data.
 \end{itemize}
-
 Dans tous les cas, cela impliquerait d’ajouter à notre application Android la
 gestion des SMS : si le SMS présente un certain format, alors notre application
 va le prendre en charge et appeler abortBroadcast(); afin que tout soit
@@ -321,7 +318,7 @@ de ce que nous voulions faire. L’auteur utilise le fonctionnement suivant :\\
   répondre.\\
 \item Quand un message doit être renvoyé sur un téléphone, le serveur vérifie
   que la connexion est toujours active.\\
-\item …et envoie les réponses à l’actor qu’il faut sur le téléphone.\\
+\item …et envoie les réponses à l’actor qu’il faut sur le téléphone.
 \end{itemize}
 Quand il n’y a aucune connexion entre le serveur et le téléphone on utilise le
 service C2MD(devenu GCM). Un message est envoyé à travers ce service pour dire
