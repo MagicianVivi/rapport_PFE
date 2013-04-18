@@ -69,8 +69,29 @@ messaging pour faire communiquer les différent téléphones.
 \fancyhead[L]{\leftmark}
 
 \section{Problématique}
+Lors des premières recherches sur le thème d’un cluster de smartphones nous
+avons très rapidement trouvé des articles sur un projet similaire: Hyrax. Ce
+projet est une adaptation du framework Hadoop pour smartphones sous Android,
+fait par des doctorants de l’université de Carnegie Melon aux États-Unis.\\
+Ce projet nous a beaucoup inspiré et nous a permis de tout de suite nous
+orienter sur des pistes d’innovations en rapport avec notre thème. Ainsi l’un
+des principaux défauts du projet Hyrax est qu’il ne prend pas en compte les
+spécifités de la plateforme utilisée: les doctorants se sont “contentés” de
+porter une partie d’Hadoop sur la machine virtuelle Dalvik d’Android. Les
+problématiques liées à l’utilisation de téléphones tels que la gestion de la
+batterie, des réseaux et autres furent donc laissés en tant que travaux futurs
+à réaliser.\\
+C’est de cet état de fait que nous sommes partis pour développer notre
+problématique principale: mettre en place une gestion dynamique de
+l’architecture de calcul pour gé́rer la consommation de batterie et la
+tolérance aux pannes liées au réseau mobile. L’intérêt de cette problématique
+étant pour nous de nous attarder autant que possible sur l’aspect mobile
+plutôt que la partie calcul de l’architecture, qui a déjà été traitée
+largement par des projets comme Hyrax.\\
+
 \section{Pistes architecturales}
 \subsection{Architecture type Hadoop}
+
 \subsection{Architecture type Akka/Gridgain}
 \subsection{Architecture avec uniquement des SMS et base de données embarquée}
 \section{Application d'une architecture: tentative de portage d'Akka}
